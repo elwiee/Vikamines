@@ -81,6 +81,21 @@ footer a:last-child { justify-self:end; color:var(--ink); }
 .page-grid figure:nth-child(even) { translate:0 45px; }
 .page-copy { width:min(760px,calc(100% - 48px)); margin:0 auto 130px; }
 .contact-card { padding:45px; border:1px solid var(--line); border-radius:16px; background:#16070a; }
+.collab { padding-top:70px; }
+.collab-card { position:relative; overflow:hidden; display:grid; grid-template-columns:.82fr 1.18fr; gap:clamp(45px,7vw,100px); padding:clamp(34px,5vw,72px); border:1px solid rgba(237,24,54,.38); border-radius:16px; background:radial-gradient(circle at 0 0,rgba(210,13,39,.28),transparent 42%),#11090b; box-shadow:0 35px 100px rgba(125,7,23,.2); }
+.collab-card::after { content:"✦"; position:absolute; right:4%; top:4%; color:rgba(237,24,54,.34); font-size:70px; animation:float 4s ease-in-out infinite alternate; }
+.collab-copy { position:relative; z-index:1; align-self:center; }
+.collab-copy h2 { margin:0; max-width:560px; font-size:clamp(2.6rem,4.6vw,5rem); line-height:.96; letter-spacing:-.07em; }
+.collab-copy>p:not(.eyebrow) { max-width:450px; color:var(--muted); line-height:1.65; }
+.collab-form { position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.collab-form label { display:flex; flex-direction:column; gap:8px; color:#d9c6cb; font-size:11px; font-weight:700; letter-spacing:.04em; }
+.collab-form input,.collab-form textarea { width:100%; border:1px solid rgba(255,255,255,.16); border-radius:12px; outline:none; color:var(--ink); background:rgba(255,255,255,.055); padding:15px 16px; font:500 14px Manrope,Arial,sans-serif; transition:border-color .2s,background .2s; }
+.collab-form textarea { resize:vertical; min-height:120px; }
+.collab-form input::placeholder,.collab-form textarea::placeholder { color:#806d72; }
+.collab-form input:focus,.collab-form textarea:focus { border-color:#ed1836; background:rgba(255,255,255,.08); }
+.form-wide { grid-column:1/-1; }
+.collab-form .button { justify-self:start; border:0; cursor:pointer; }
+.form-status { align-self:center; margin:0; color:#d6a8b3; font-size:12px; line-height:1.45; }
 
 @keyframes letter-in { to { opacity:1; transform:none; } }
 @keyframes photo-open { to { clip-path:inset(0 0 0 0 round 48% 48% 16px 16px); } }
@@ -122,6 +137,9 @@ footer a:last-child { justify-self:end; color:var(--ink); }
   .page-hero { padding-top:120px; }
   .page-grid { grid-template-columns:1fr; }
   .page-grid figure,.page-grid figure:nth-child(even) { height:520px; translate:none; }
+  .collab-card { grid-template-columns:1fr; padding:32px 20px; }
+  .collab-form { grid-template-columns:1fr; }
+  .form-wide { grid-column:auto; }
 }
 @media (prefers-reduced-motion:reduce) {
   html { scroll-behavior:auto; }
